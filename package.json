@@ -11,6 +11,9 @@
     "type": "git",
     "url": "git+https://github.com/sematext/eslint-plugin-esm-import.git"
   },
+  "files": [
+    "index.js"
+  ],
   "keywords": [
     "eslint",
     "eslintplugin",

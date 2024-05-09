@@ -4,8 +4,8 @@
   "description": "ESLint plugin which enforces explicit .js extensions in local imports while leveraging import resolvers.",
   "main": "index.js",
   "scripts": {
-    "lint": "cd test && npm link .. && npm i && ./node_modules/.bin/eslint .",
-    "fix": "cd test && npm link .. && npm i && ./node_modules/.bin/eslint . --fix"
+    "lint": "npm i && cd test && npm link .. && npm i && ./node_modules/.bin/eslint .",
+    "fix": "npm i && cd test && npm link .. && npm i && ./node_modules/.bin/eslint . --fix"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,11 @@
   },
   "homepage": "https://github.com/sematext/eslint-plugin-esm-import#readme",
   "peerDependencies": {
+    "eslint": "^8",
+    "eslint-plugin-import": "^2",
+    "eslint-module-utils": "^2"
+  },
+  "devDependencies": {
     "eslint": "^8",
     "eslint-plugin-import": "^2",
     "eslint-module-utils": "^2"

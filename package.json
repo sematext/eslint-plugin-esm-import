@@ -4,8 +4,8 @@
   "description": "ESLint plugin which enforces explicit .js extensions in local imports while leveraging import resolvers.",
   "main": "index.js",
   "scripts": {
-    "lint": "cd test && npm link .. && npm i && eslint .",
-    "fix": "cd test && npm link .. && npm i && eslint . --fix"
+    "lint": "cd test && npm link .. && npm i && ./node_modules/.bin/eslint .",
+    "fix": "cd test && npm link .. && npm i && ./node_modules/.bin/eslint . --fix"
   },
   "repository": {
     "type": "git",

@@ -56,6 +56,8 @@ source.js
 ✖ 3 problems (3 errors, 0 warnings)
   3 errors and 0 warnings potentially fixable with the `--fix` option.
 ```
+The purpose of the GH action is to run eslint in order to show the plugin in action:
+![GH action lint run](gh-action.png)
 
 5. Fix
 

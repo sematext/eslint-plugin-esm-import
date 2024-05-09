@@ -1,0 +1,12 @@
+{
+  "type": "module",
+  "browser": {
+    "Dir": "./dir"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-import-resolver-webpack": "^0.13.8",
+    "eslint-plugin-import": "^2",
+    "eslint-plugin-esm-import": "*"
+  }
+}

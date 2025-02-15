@@ -22,6 +22,13 @@ Inspired by [eslint-plugin-require-extensions](https://github.com/solana-labs/es
 
 ## Install
 
+| ESLint | This package |
+|-|-|
+| `v9`   | `v1.0.0`  |
+| `v8`  | `v0.0.1`  |
+| `< v8`  | unsupported, but try `v0.0.1`  |
+
+
 1. Install
 ```shell
 npm install --save-dev eslint-plugin-esm-import
@@ -56,7 +63,7 @@ source.js
 ✖ 3 problems (3 errors, 0 warnings)
   3 errors and 0 warnings potentially fixable with the `--fix` option.
 ```
-The purpose of the GH action is to run eslint in order to show the plugin in action:
+The purpose of the GH action is to run eslint in order to show the plugin in action:  
 ![GH action lint run](gh-action.png)
 
 5. Fix
@@ -105,3 +112,17 @@ Make sure you define extension aliases in your Webpack configuration, otherwise 
 
 `eslint-plugin-import` [has no plans](https://github.com/import-js/eslint-plugin-import/issues/2111) to treat `ts` imports as `js`.  
 `TypeScript` has no plans to [transform](https://github.com/microsoft/TypeScript/issues/16577) nor [enforce](https://github.com/microsoft/TypeScript/issues/42813) extensions.
+
+
+### Changelog
+
+[CHANGELOG.md](./CHANGELOG.md)
+
+### Cutting a new version
+
+After changes are made:
+1. Test whether the plugin still does its job by running `npm run lint` and `npm run fix`.
+1. Bump the project's version in the [package.json](./package.json)
+1. Populate the [CHANGELOG.md](./CHANGELOG.md)
+1. Run `npm publish --auth-type legacy`
+1. When asked to log in use `sematext` npm account (you'll need 2FA OTP).

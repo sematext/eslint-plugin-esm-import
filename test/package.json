@@ -4,8 +4,8 @@
     "Dir": "./dir"
   },
   "devDependencies": {
-    "eslint": "^8",
-    "eslint-import-resolver-webpack": "^0.13.8",
+    "eslint": "^9",
+    "eslint-import-resolver-webpack": "^0.13",
     "eslint-plugin-import": "^2",
     "eslint-plugin-esm-import": "*"
   }

@@ -47,39 +47,48 @@ function rule(check) {
   };
 }
 
-module.exports = {
-  meta: {
-    name: 'eslint-plugin-esm-import',
-  },
-  configs: {
-    recommended: {
-      plugins: ['esm-import'],
-      rules: {
-        'esm-import/extensions': 'error',
-      },
+const meta = {
+  name: 'eslint-plugin-esm-import',
+  version: '1.0.0',
+  engines: {
+    eslint: ">=9.0.0"
+  }
+};
+const configs = {
+  recommended: {
+    plugins: ['esm-import'],
+    rules: {
+      'esm-import/extensions': 'error',
     },
   },
-  rules: {
-    'extensions': rule((context, node, path) => {
-      const value = node.source.value;
-      if (path) {
-        const indexFiles = context.settings['esm-import']?.index ?? defaultIndexFiles;
-        let message;
-        let fix;
-        if (resolvedDirToIndex(value, path, indexFiles)) {
-          message = 'Importing a directory requires /index.js'
-          fix = value.includes('?') ? undefined : (fixer) => fixer.replaceText(node.source, `'${value}/index.js'`);
-        } else {
-          message = 'Local imports and exports must end with .js';
-          // imports with query strings require manual fix for now
-          fix = value.includes('?') ? undefined : (fixer) => fixer.replaceText(node.source, `'${value}.js'`);
-        }
-        context.report({
-          node,
-          message,
-          fix,
-        });
+};
+const rules = {
+  'extensions': rule((context, node, path) => {
+    const value = node.source.value;
+    if (path) {
+      const indexFiles = context.settings['esm-import']?.index ?? defaultIndexFiles;
+      let message;
+      let fix;
+      if (resolvedDirToIndex(value, path, indexFiles)) {
+        message = 'Importing a directory requires /index.js';
+        fix = value.includes('?') ? undefined : (fixer) => fixer.replaceText(node.source, `'${value}/index.js'`);
+      } else {
+        message = 'Local imports and exports must end with .js';
+        // imports with query strings require manual fix for now
+        fix = value.includes('?') ? undefined : (fixer) => fixer.replaceText(node.source, `'${value}.js'`);
       }
-    }),
-  },
+      context.report({
+        node,
+        message,
+        fix,
+      });
+    }
+  }),
+};
+
+// Add default export combining all exports
+module.exports = {
+  meta,
+  configs,
+  rules
 };

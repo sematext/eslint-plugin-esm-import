@@ -22,11 +22,11 @@ Inspired by [eslint-plugin-require-extensions](https://github.com/solana-labs/es
 
 ## Install
 
-| ESLint | This package |
-|-|-|
-| `v9`   | `v1.0.0`  |
-| `v8`  | `v0.0.1`  |
-| `< v8`  | unsupported, but try `v0.0.1`  |
+| ESLint | This package | eslint config example |
+|-|-|-|
+| `v9`   | `v1.0.0`  | [eslint.config.js](https://github.com/sematext/eslint-plugin-esm-import/blob/master/test/eslint.config.js) |
+| `v8`  | `v0.0.1`  | [.eslintrc](https://github.com/sematext/eslint-plugin-esm-import/blob/d276a35ac2ddf90f08f69e2db35f9fd6f9116975/test/.eslintrc) |
+| `< v8`  | unsupported, but try `v0.0.1`  |  |
 
 
 1. Install
@@ -34,7 +34,7 @@ Inspired by [eslint-plugin-require-extensions](https://github.com/solana-labs/es
 npm install --save-dev eslint-plugin-esm-import
 ```
 
-2. Edit `.eslintrc`
+2. Edit `eslint.config.js`
 ```json
 {
     "extends": ["plugin:esm-import/recommended"]

@@ -1,6 +1,10 @@
 # The inner 'test' project
 
 
+## v1.0.1 - 2025-02-16
+### Changes
+- Update dependencies to the min version which supports ESLint v9
+
 ## v1.0.0 - 2025-02-15
 ### Changes
 - Works with ESLint v9

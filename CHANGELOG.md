@@ -5,6 +5,12 @@ Releases are published only to npm, since there are no build artifacts to bundle
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).  
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).  
 
+## v1.0.1 - 2025-02-16
+### Changes
+- Update dependencies to the min version which supports ESLint v9
+- Use the new flat config examples in the README
+- Provide a conf example for each supported ESLint version
+
 ## v1.0.0 - 2025-02-15
 ### Changes
 - Works with ESLint v9

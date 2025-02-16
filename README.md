@@ -34,10 +34,17 @@ Inspired by [eslint-plugin-require-extensions](https://github.com/solana-labs/es
 npm install --save-dev eslint-plugin-esm-import
 ```
 
-2. Edit `eslint.config.js`
-```json
-{
-    "extends": ["plugin:esm-import/recommended"]
+2. Add these snippets to your `eslint.config.js` (see the table above for earlier ESLint versions)
+```js
+import esmImport from 'eslint-plugin-esm-import';
+export default [
+  {
+    plugins: {
+      'esm-import': esmImport
+    },
+    rules: {
+      ...esmImport.configs.recommended.rules
+    }
 }
 ```
 Restart ESLint server to force conf reload in your IDE (in VSCode: `Help > Show all commands > Restart ESLint server`).

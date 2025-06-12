@@ -1,3 +1,7 @@
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)  
+
+We migrated to [oxlint](https://github.com/oxc-project/oxc).
+
 # eslint-plugin-esm-import
 
 An ESLint plugin which enforces explicit `.js` extensions in local imports.
